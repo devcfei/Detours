@@ -28,8 +28,9 @@ filter_out("${FILTERS}" "${SRCS_ALL}" SRCS )
 message( STATUS "outputs are: ${SRCS}")
 
 add_library(Detours STATIC ${SRCS})
-
-
+set_target_properties(Detours PROPERTIES  
+    PUBLIC_HEADER "src/detours.h"  
+    )  
 
 # install
 install(TARGETS Detours
